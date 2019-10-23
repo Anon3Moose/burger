@@ -6,7 +6,7 @@ var app = express();
 
 var PORT = process.env.PORT || 8080;
 
-app.use(express.static(process.cwd() + '/public'));
+app.use(express.static(process.cwd() + '/views'));
 
 app.use(bodyParser.urlencoded({
   extended: false
@@ -16,12 +16,12 @@ app.use(methodOverride('_method'));
 
 var exphbs = require('express-handlebars');
 
-app.engine('hbs', exphbs({
+app.engine('handlebars', exphbs({
   defaultLayout: 'main'
 }));
 
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+app.set('view engine', 'handlebars');
 
 var routes = require('./controllers/burgers_controllers.js');
 app.use('/', routes);
