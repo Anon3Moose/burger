@@ -7,7 +7,7 @@ if (process.env.PORT) {
   connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'Jaracoc@@l22',
     database: 'burgers_db'
   });
 };
